@@ -22,6 +22,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'preferred_sources',
+        'preferred_authors',
     ];
 
     /**
@@ -44,6 +46,8 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'preferred_sources' => 'array',
+            'preferred_authors' => 'array',
         ];
     }
 }

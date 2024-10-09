@@ -27,6 +27,7 @@ class ApiAuthController extends Controller
         $token = $user->createToken('auth_token')->plainTextToken;
 
         return response()->json([
+            'user' => $user,
             'access_token' => $token,
             'token_type' => 'Bearer',
         ]);
@@ -50,8 +51,16 @@ class ApiAuthController extends Controller
         $token = $user->createToken('auth_token')->plainTextToken;
 
         return response()->json([
+            'user' => $user,
             'access_token' => $token,
             'token_type' => 'Bearer',
         ]);
+    }
+
+    public function logout(Request $request)
+    {
+        $request->user()->currentAccessToken()->delete();
+
+        return response()->json(['message' => 'Logged out successfully']);
     }
 }
