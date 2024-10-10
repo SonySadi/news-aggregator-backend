@@ -54,8 +54,9 @@ class ScrapeGuardianNews extends Command
                         'published_at' => Carbon::parse($article['webPublicationDate']),
                         'keywords' => json_encode($article['tags'] ?? []),
                         'section_name' => $article['sectionName'],
-                        'pillar_name' => $article['pillarName'],
-                        // Add other fields as needed
+                        'news_type' => $article['type'] ?? null,
+                        'word_count' => $article['fields']['wordcount'] ?? null,
+                        'document_type' => $article['type'] ?? null,
                     ]
                 );
             }

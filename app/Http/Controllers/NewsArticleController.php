@@ -11,6 +11,17 @@ class NewsArticleController extends Controller
 {
     public function index(Request $request)
     {
+        // validation
+        $request->validate([
+            'search' => 'nullable|string',
+            'startDate' => 'nullable|date',
+            'endDate' => 'nullable|date',
+            'source' => 'nullable|string',
+            'author' => 'nullable|string',
+        ]);
+
+
+
         $query = NewsArticle::query();
 
         if ($request->has('search')) {

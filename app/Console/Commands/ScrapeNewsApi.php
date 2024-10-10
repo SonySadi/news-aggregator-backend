@@ -63,6 +63,10 @@ class ScrapeNewsApi extends Command
                 'url_to_image' => $article['urlToImage'],
                 'published_at' => Carbon::parse($article['publishedAt']),
                 'news_type' => 'article',
+                'keywords' => json_encode([]),
+                'section_name' => null,
+                'word_count' => null,
+                'document_type' => null,
             ]
         );
     }

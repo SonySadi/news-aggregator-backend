@@ -18,20 +18,13 @@ class NewsArticle extends Model
         'published_at',
         'keywords',
         'section_name',
-        'subsection_name',
         'news_type',
-        'multimedia',
         'word_count',
         'document_type',
-        'byline',
-        'pillar_id',
-        'pillar_name',
     ];
 
     protected $casts = [
         'published_at' => 'datetime',
         'keywords' => 'array',
-        'multimedia' => 'array',
-        'byline' => 'array',
     ];
 }

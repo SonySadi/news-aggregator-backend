@@ -25,14 +25,9 @@ return new class extends Migration
             $table->timestamp('published_at');
             $table->json('keywords')->nullable();
             $table->string('section_name', 255)->nullable();
-            $table->string('subsection_name', 255)->nullable();
             $table->string('news_type', 255)->nullable();
-            $table->json('multimedia')->nullable();
             $table->integer('word_count')->nullable();
             $table->string('document_type', 255)->nullable();
-            $table->json('byline')->nullable();
-            $table->string('pillar_id', 255)->nullable();
-            $table->string('pillar_name', 255)->nullable();
             $table->timestamps();
         });
 

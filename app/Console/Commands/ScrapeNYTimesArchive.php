@@ -59,7 +59,6 @@ class ScrapeNYTimesArchive extends Command
                 'published_at' => Carbon::parse($article['pub_date']),
                 'keywords' => json_encode($this->extractKeywords($article)),
                 'section_name' => $article['section_name'],
-                'subsection_name' => $article['subsection_name'] ?? null,
                 'news_type' => $article['type_of_material'] ?? null,
                 'word_count' => $article['word_count'] ?? null,
                 'document_type' => $article['document_type'],
